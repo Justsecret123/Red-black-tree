@@ -4,25 +4,26 @@
 
 void menu_insertion()
 {
-	
+	int key;
+	printf("Enter a key: ");
+	scanf("%d",&key);
 }
 
 void menu_removal()
 {
-	
+	int key;
+	printf("Enter the key of the node you want to remove: ");
+	scanf("%d", &key);
 }
 
 void menu_display()
 {
-	
+	printf("Current tree: \n\n\n");
 }
 
 void menu_search()
 {
 	int choice;
-	fflush(stdin);
-	getch();
-	system("cls");
 	printf("Enter the Key: ");
 	scanf("%d", &choice);
 }
@@ -35,6 +36,10 @@ void menu()
 	
 	printf("**************Red-black trees****************\n1-Insertion\n2-Removal\n3-Display the tree\n4-Search a key\n5-Exit\n\nWhich operation do you want to do ? ");
 	scanf("%d", &choice);
+	
+	fflush(stdin);
+	getch();
+	system("cls");
 	
 	switch(choice)
 	{
@@ -54,7 +59,7 @@ void menu()
 		case 5:
 			printf("Do you really want to quit ? : 1(Yes) - Otherwise (No): ");
 			scanf("%d", &confirm);
-				if(confirm==0) 
+				if(confirm==1) 
 					{exit(0);}
 				else 
 					{menu();}	
@@ -63,5 +68,4 @@ void menu()
 			menu();	
 	}
 }
-
 
