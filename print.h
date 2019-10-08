@@ -1,6 +1,6 @@
-//#include<stdio.h>
-//#include<stdlib.h>
-//#include<conio.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
 
 void menu_insertion()
 {
@@ -23,9 +23,11 @@ void menu_display()
 
 void menu_search()
 {
-	int choice;
+	int key;
+	struct Node* result;
 	printf("Enter the Key: ");
-	scanf("%d", &choice);
+	scanf("%d", &key);
+//	result=search(node,key);
 }
 
 
