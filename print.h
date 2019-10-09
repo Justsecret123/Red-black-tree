@@ -16,23 +16,30 @@ void menu_removal()
 	scanf("%d", &key);
 }
 
-void menu_display()
+void menu_display(Node* root)
 {
 	printf("Current tree: \n\n\n");
+	display_tree(root,0);
 }
 
-void menu_search()
+void menu_search(Node* test)
 {
 	int key;
 	struct Node* result;
+	
 	printf("Enter the Key: ");
 	scanf("%d", &key);
-//	result=search(node,key);
+	result=search(test,key);
+	
+	if(result==NULL)
+		{printf("Not found :(");}
+	else
+		{printf("Found :D ");}
 }
 
 
 
-void menu()
+void menu(Node* test)
 {
 	int choice, confirm; 
 	
@@ -53,10 +60,10 @@ void menu()
 			menu_removal();
 			break;
 		case 3:
-			menu_display();
+			menu_display(test);
 			break;
 		case 4:
-			menu_search();
+			menu_search(test);
 			break;
 		case 5:
 			printf("Do you really want to quit ? : 1(Yes) - Otherwise (No): ");
@@ -64,10 +71,10 @@ void menu()
 				if(confirm==1) 
 					{exit(0);}
 				else 
-					{menu();}	
+					{menu(test);}	
 			break;
 		default:
-			menu();	
+			menu(test);	
 	}
 }
 
