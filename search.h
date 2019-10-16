@@ -10,6 +10,9 @@ struct Node* search(struct Node* node, int key)
 		if(node->key == key)
 			{return node;}
 		else
-			{return (search(node->left,key)||search(node->right,key));}
+			if(key > node->key)
+				{return search(node->right,key);}
+			else
+				{return(search(node->left,key));}
 	}
 }
