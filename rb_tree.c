@@ -69,13 +69,15 @@ int main()
 	test7 = (Node*)malloc(sizeof(Node));
 	
 	//Keys
-	test->key=3;
-	test2->key=9;
-	test3->key=8;
+	test->key=8;
+	test2->key=6;
+	test3->key=10;
+	
 	test4->key=5;
-	test5->key=10;
-	test6->key=7;
-	test7->key=20;
+	test5->key=7;
+	
+	test6->key=9;
+	test7->key=11;
 	
 	
 	//Colors
