@@ -17,8 +17,7 @@ void menu_removal()
 }
 
 void menu_display(Node* root)
-{
-	printf("Current tree: \n\n\n");
+{	
 	display_tree(root,0);
 }
 
@@ -45,8 +44,6 @@ void menu(Node* test)
 	
 	printf("**************Red-black trees****************\n1-Insertion\n2-Removal\n3-Display the tree\n4-Search a key\n5-Exit\n\nWhich operation do you want to do ? ");
 	scanf("%d", &choice);
-	
-	fflush(stdin);
 	getch();
 	system("cls");
 	
