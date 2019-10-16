@@ -1,7 +1,15 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<conio.h>
+#include<windows.h>
 
+#define RED   "\x1B[31m"
+#define GRN   "\x1B[32m"
+#define YEL   "\x1B[33m"
+#define BLU   "\x1B[34m"
+#define MAG   "\x1B[35m"
+#define CYN   "\x1B[36m"
+#define WHT   "\x1B[37m"
+#define RESET "\x1b[30m"
 
 
 //Strucuture declaration
@@ -97,26 +105,36 @@ int main()
 	//Nodes
 	test2->left = test4;
 	test2->right=test5;
+	test2->parent = test;
 	
 	test3->left=test6;
 	test3->right=test7;
+	test3->parent = test;
 	
 	test4->left=NULL;
 	test4->right=NULL;
+	test4->parent= test2;
 	
 	test5->left=NULL;
 	test5->right=NULL;
+	test5->parent = test2;
 	
 	test6->left=NULL;
 	test6->right=NULL;
+	test6->parent = test3;
 	
 	test7->left=NULL;
 	test7->right=NULL;
+	test7->parent = test3;
+	
+	//Screen size
+	system("COLOR F0");
+	system("mode con: cols=100 lines=30");
 	
 	//Loop
 	menu(test);
 	
-	//Windows Size
+	
 
 	
 	return 0;
