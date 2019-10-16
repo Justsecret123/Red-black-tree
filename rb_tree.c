@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<conio.h>
 
 
 
@@ -9,7 +10,7 @@ typedef struct Node
 	struct Node* parent; 
 	struct Node* left; 
 	struct Node* right; 
-	char color[4];
+	char* color;
 	int key;	
 }
 Node;
@@ -37,8 +38,8 @@ Node* getUncle(Node* node)
 	if(result==NULL)
 		{return NULL;}
 	else
-//		{return (node==result->)}
-//return NULL;
+		{return (node->parent==result->left)? result->right : result->left;}
+return NULL;
 }
 
 Node* getSibling(Node* node)
@@ -53,47 +54,68 @@ Node* getSibling(Node* node)
 
 int main()
 {
-	Node* test, *test2, *test3;
+	Node* test, *test2, *test3, *test4, *test5, *test6, *test7;
 	
 	//Creation
 	test = (Node*)malloc(sizeof(Node));
+	test->left = NULL;
+	test->right = NULL; 
+	test->parent = NULL;
 	test2 = (Node*)malloc(sizeof(Node));
 	test3 = (Node*)malloc(sizeof(Node));
+	test4 = (Node*)malloc(sizeof(Node));
+	test5 = (Node*)malloc(sizeof(Node));
+	test6 = (Node*)malloc(sizeof(Node));
+	test7 = (Node*)malloc(sizeof(Node));
 	
 	//Keys
 	test->key=3;
 	test2->key=9;
 	test3->key=8;
+	test4->key=5;
+	test5->key=10;
+	test6->key=7;
+	test7->key=20;
+	
 	
 	//Colors
-	test->color[0]='b';
-		test->color[1]='l';
-			test->color[2]='a';
-				test->color[3]='c';
-					test->color[4]='k';
-	
-	test2->color[0]='r';
-		test2->color[1]='e';
-			test2->color[2]='d';
-				test2->color[3]='\0';
-	
-	test3->color[0]='r';
-		test3->color[1]='e';
-			test3->color[2]='d';
-					test3->color[3]='\0';
-	
-	//Root
+					
+	test->color = "black";
+	test2->color = "red";
+	test3->color = "red";
+	test4->color = "black";
+	test5->color = "black";
+	test6->color = "black";
+	test7->color = "black";
+
+	//Root 
 	test->left=test2;
 	test->right=test3;
 	
 	//Nodes
-	test2->left=NULL;
-	test2->right=NULL;
-	test3->left=NULL;
-	test3->right=NULL;
+	test2->left = test4;
+	test2->right=test5;
+	
+	test3->left=test6;
+	test3->right=test7;
+	
+	test4->left=NULL;
+	test4->right=NULL;
+	
+	test5->left=NULL;
+	test5->right=NULL;
+	
+	test6->left=NULL;
+	test6->right=NULL;
+	
+	test7->left=NULL;
+	test7->right=NULL;
 	
 	//Loop
 	menu(test);
+	
+	//Windows Size
+
 	
 	return 0;
 }
