@@ -62,7 +62,7 @@ Node* getSibling(Node* node)
 
 int main()
 {
-	Node* test, *test2, *test3, *test4, *test5, *test6, *test7;
+	Node* test, *test2, *test3, *test4, *test5, *test6, *test7, *test8, *test9;
 	
 	//Creation
 	test = (Node*)malloc(sizeof(Node));
@@ -78,6 +78,7 @@ int main()
 	
 	//Keys
 	test->key=8;
+	
 	test2->key=6;
 	test3->key=10;
 	
@@ -91,45 +92,56 @@ int main()
 	//Colors
 					
 	test->color = "black";
-	test2->color = "red";
-	test3->color = "red";
-	test4->color = "black";
-	test5->color = "black";
-	test6->color = "black";
-	test7->color = "black";
+	test2->color = "black";
+	test3->color = "black";
+	test4->color = "red";
+	test5->color = "red";
+	test6->color = "red";
+	test7->color = "red";
 
 	//Root 
 	test->left=test2;
 	test->right=test3;
+	test->parent=NULL;
 	
-	//Nodes
-	test2->left = test4;
-	test2->right=test5;
+	//Nodes : 6 = test2
 	test2->parent = test;
+	test2->left = test4;
+	test2->right = test5;
 	
-	test3->left=test6;
-	test3->right=test7;
-	test3->parent = test;
+	//Nodes : 5 = test4
+	test4->parent = test2;
+	test4->left = NULL;
+	test4->right = NULL;
 	
-	test4->left=NULL;
-	test4->right=NULL;
-	test4->parent= test2;
-	
-	test5->left=NULL;
-	test5->right=NULL;
+	//Nodes : 7 = test5
 	test5->parent = test2;
+	test5->left = NULL;
+	test5->right = NULL;
 	
-	test6->left=NULL;
-	test6->right=NULL;
+	//Nodes : 10 = test3
+	test3->parent = test;
+	test3->left = test6;
+	test3->right = test7;
+	
+	//Nodes : 9 = test6 
 	test6->parent = test3;
+	test6->left = NULL;
+	test6->right = NULL;
 	
-	test7->left=NULL;
-	test7->right=NULL;
+	//Nodes : 11 = test7
 	test7->parent = test3;
+	test7->left = NULL;
+	test7->right = NULL;
 	
+	test9 = (Node*)mallloc(sizeof(Node));
+	
+	
+	
+		
 	//Screen size
 	system("COLOR F0");
-	system("mode con: cols=100 lines=30");
+	system("mode con: cols=120 lines=38");
 	
 	//Loop
 	menu(test);
