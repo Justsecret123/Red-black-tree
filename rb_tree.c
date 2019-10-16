@@ -1,9 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<windows.h>
+#define COUNT 10
+#include<malloc.h>
 
 #define RED   "\x1B[31m"
-#define GRN   "\x1B[32m"
+#define GRN   "\x#endif1B[32m"
 #define YEL   "\x1B[33m"
 #define BLU   "\x1B[34m"
 #define MAG   "\x1B[35m"
@@ -134,9 +135,7 @@ int main()
 	test7->left = NULL;
 	test7->right = NULL;
 	
-	test9 = (Node*)mallloc(sizeof(Node));
-	
-	
+
 	
 		
 	//Screen size
