@@ -1,7 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define COUNT 10
 #include<malloc.h>
+#include<windows.h>
+
+/*
+|--------------|
+ Define colors
+|-------------| 
+*/
 
 #define RED   "\x1B[31m"
 #define GRN   "\x#endif1B[32m"
@@ -13,20 +19,44 @@
 #define RESET "\x1b[30m"
 
 
-//Strucuture declaration
+/*
+|----------------------------|
+  Node structure declaration
+|---------------------------|
+*/
+
 typedef struct Node
 {
 	struct Node* parent; 
 	struct Node* left; 
 	struct Node* right; 
 	char* color;
-	int key;	
+	int key;
 }
 Node;
 
+/*
+|---------------------------------------------|
+  Point structure declaration (see display.h) 
+|--------------------------------------------|
+*/
+typedef struct Point
+{
+	int LastX;
+	int step;
+}
+Point;
+
+
+/*
+|------------|
+ Header files
+|-----------|
+*/
+
 #include "search.h"
 #include "display.h"
-#include "print.h"
+#include "menu.h"
 #include "node.h"
 
 
@@ -63,21 +93,36 @@ Node* getSibling(Node* node)
 
 int main()
 {
-	Node* test, *test2, *test3, *test4, *test5, *test6, *test7, *test8, *test9;
+	Node* test, *test2, *test3, *test4, *test5, *test6, *test7, *test8, *test9, *test10, *test11;
 	
-	//Creation
+	/* ------- Test nodes creation -------- */
+	
+	/* ----- Root ------ */
 	test = (Node*)malloc(sizeof(Node));
 	test->left = NULL;
 	test->right = NULL; 
 	test->parent = NULL;
+	
+	/* --------- First level nodes ------- */ 
 	test2 = (Node*)malloc(sizeof(Node));
 	test3 = (Node*)malloc(sizeof(Node));
+	
+	/* --------- Second level nodes ------- */ 
 	test4 = (Node*)malloc(sizeof(Node));
 	test5 = (Node*)malloc(sizeof(Node));
 	test6 = (Node*)malloc(sizeof(Node));
 	test7 = (Node*)malloc(sizeof(Node));
+
+	/* ------ Third level nodes ----------*/
+	test8 = (Node*)malloc(sizeof(Node));
+	test9 = (Node*)malloc(sizeof(Node));
+	test10 = (Node*)malloc(sizeof(Node));
+	test11= (Node*)malloc(sizeof(Node));
 	
-	//Keys
+			
+	
+	/* ------- Test nodes keys ------- */
+	
 	test->key=8;
 	
 	test2->key=6;
@@ -90,7 +135,8 @@ int main()
 	test7->key=11;
 	
 	
-	//Colors
+	
+	/* --------- Test nodes colors ---------- */
 					
 	test->color = "black";
 	test2->color = "black";
@@ -110,7 +156,7 @@ int main()
 	test2->left = test4;
 	test2->right = test5;
 	
-	//Nodes : 5 = test4
+//	//Nodes : 5 = test4
 	test4->parent = test2;
 	test4->left = NULL;
 	test4->right = NULL;
@@ -135,9 +181,7 @@ int main()
 	test7->left = NULL;
 	test7->right = NULL;
 	
-
 	
-		
 	//Screen size
 	system("COLOR F0");
 	system("mode con: cols=120 lines=38");
