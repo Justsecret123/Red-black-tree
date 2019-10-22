@@ -9,8 +9,8 @@ This repository contains a Red-Black Tree simulation (visualization, insertion, 
 - [ ] Data removal 
 
 ## Screenshots 
-![Main menu (menu) :] (Main_menu.PNG)
-![Display (display) :] (Display.PNG)
+![Home (home):](Main_menu.PNG)
+![Display (display):](Display.PNG)
 > **Some screenshots will be uploaded as soon as the project is completed.
 
 
