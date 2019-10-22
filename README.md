@@ -10,8 +10,6 @@ This repository contains a Red-Black Tree simulation (visualization, insertion, 
 
 # Screenshots 
 > **Some screenshots will be uploaded as soon as the project is complete.
-
-> ** Main menu: 
 ![Main menu:] (Main_menu.PNG)
 > ** Visualization :
 ![Display:] (Display.PNG)
