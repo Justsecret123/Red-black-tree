@@ -1,21 +1,21 @@
-# Red-black-tree
+## Red-black-tree
 This repository contains a Red-Black Tree simulation (visualization, insertion, removal...). 
 > ** Some of my repositories contain french-only projects, whilst this one is 100% English. 
 
-# Features 
-- [] Data insertion 
+## Features 
+- [ ] Data insertion 
 - [x] Search function
 - [x] Visualization 
-- [] Data removal 
+- [ ] Data removal 
 
-# Screenshots 
+## Screenshots 
 ![Main menu (menu) :] (Main_menu.PNG)
 ![Display (display) :] (Display.PNG)
 > **Some screenshots will be uploaded as soon as the project is completed.
 
 
 
-# Tools 
+## Tools 
 - Language : C
 - IDE : Dev-C++
 - Compiler : gcc
