@@ -3,10 +3,10 @@ This repository contains a Red-Black Tree simulation (visualization, insertion, 
 > ** Some of my repositories contain french-only projects, whilst this one is 100% English. 
 
 # Features 
-- Data insertion 
--[] Search function
--[] Visualization 
-- Data removal 
+- [] Data insertion 
+- [x] Search function
+- [x] Visualization 
+- [] Data removal 
 
 # Screenshots 
 ![Main menu (menu) :] (Main_menu.PNG)
