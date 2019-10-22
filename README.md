@@ -4,12 +4,17 @@ This repository contains a Red-Black Tree simulation (visualization, insertion, 
 
 # Features 
 - Data insertion 
-- Search function
-- Visualization
-- Data removal 
+- Search function : > ** Done []
+- Visualization : > ** Done []
+- Data removal : 
 
 # Screenshots 
-> **Some screenshots will be uploaded as soon as the project is complete. 
+> **Some screenshots will be uploaded as soon as the project is complete.
+
+> ** Main menu: 
+![Main menu:] (Main_menu.PNG)
+> ** Visualization :
+![Display:] (Display.PNG)
 
 # Tools 
 - Language : C
