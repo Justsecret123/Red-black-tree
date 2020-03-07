@@ -3,7 +3,7 @@ This repository contains a Red-Black Tree simulation (visualization, insertion, 
 > ** Some of my repositories contain french-only projects, whilst this one is 100% English. 
 
 ## Features 
-- [ ] Data insertion 
+- [x] Data insertion 
 - [x] Search function
 - [x] Visualization 
 - [ ] Data removal 
