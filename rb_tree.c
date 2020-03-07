@@ -56,8 +56,8 @@ Point;
 
 #include "search.h"
 #include "display.h"
-#include "menu.h"
-#include "node.h"
+#include<assert.h>
+
 
 
 
@@ -89,7 +89,8 @@ Node* getSibling(Node* node)
 		{return	(node==node->parent->left)? node->parent->right : node->parent->left;}
 }
 
-
+#include "node.h"
+#include "menu.h"
 
 int main()
 {
@@ -99,87 +100,11 @@ int main()
 	
 	/* ----- Root ------ */
 	test = (Node*)malloc(sizeof(Node));
+	test->key = 8;
+	test->color = "black";
 	test->left = NULL;
 	test->right = NULL; 
 	test->parent = NULL;
-	
-	/* --------- First level nodes ------- */ 
-	test2 = (Node*)malloc(sizeof(Node));
-	test3 = (Node*)malloc(sizeof(Node));
-	
-	/* --------- Second level nodes ------- */ 
-	test4 = (Node*)malloc(sizeof(Node));
-	test5 = (Node*)malloc(sizeof(Node));
-	test6 = (Node*)malloc(sizeof(Node));
-	test7 = (Node*)malloc(sizeof(Node));
-
-	/* ------ Third level nodes ----------*/
-	test8 = (Node*)malloc(sizeof(Node));
-	test9 = (Node*)malloc(sizeof(Node));
-	test10 = (Node*)malloc(sizeof(Node));
-	test11= (Node*)malloc(sizeof(Node));
-	
-			
-	
-	/* ------- Test nodes keys ------- */
-	
-	test->key=8;
-	
-	test2->key=6;
-	test3->key=10;
-	
-	test4->key=5;
-	test5->key=7;
-	
-	test6->key=9;
-	test7->key=11;
-	
-	
-	
-	/* --------- Test nodes colors ---------- */
-					
-	test->color = "black";
-	test2->color = "black";
-	test3->color = "black";
-	test4->color = "red";
-	test5->color = "red";
-	test6->color = "red";
-	test7->color = "red";
-
-	//Root 
-	test->left=test2;
-	test->right=test3;
-	test->parent=NULL;
-	
-	//Nodes : 6 = test2
-	test2->parent = test;
-	test2->left = test4;
-	test2->right = test5;
-	
-//	//Nodes : 5 = test4
-	test4->parent = test2;
-	test4->left = NULL;
-	test4->right = NULL;
-	
-	//Nodes : 7 = test5
-	test5->parent = test2;
-	test5->left = NULL;
-	test5->right = NULL;
-	
-	//Nodes : 10 = test3
-	test3->parent = test;
-	test3->left = test6;
-	test3->right = test7;
-	
-	//Nodes : 9 = test6 
-	test6->parent = test3;
-	test6->left = NULL;
-	test6->right = NULL;
-	
-	//Nodes : 11 = test7
-	test7->parent = test3;
-	test7->left = NULL;
-	test7->right = NULL;
 	
 	
 	//Screen size
@@ -189,7 +114,7 @@ int main()
 	//Loop
 	menu(test);
 	
-	
+
 
 	
 	return 0;
