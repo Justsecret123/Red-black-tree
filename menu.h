@@ -2,13 +2,19 @@
 //#include<stdlib.h>
 //#include<conio.h>
 
-void menu_insertion()
+Node* menu_insertion(Node* root)
 {
 	int key;
 	printf("Enter a key: ");
 	scanf("%d",&key);
+	Node* node = (Node*)malloc(sizeof(Node));
+	node->key = key;
+	root = Insert(root,node);
+	return root;
 	
 }
+
+
 
 void menu_removal()
 {
@@ -49,7 +55,7 @@ void menu_search(Node* test)
 
 
 
-void menu(Node* test)
+void menu(Node* root)
 {
 	int choice, confirm; 
 	LOOP:
@@ -62,16 +68,17 @@ void menu(Node* test)
 	{
 	
 		case 1:
-			menu_insertion();
+			root = menu_insertion(root);
+			menu(root);
 			break;
 		case 2: 
 			menu_removal();
 			break;
 		case 3:
-			menu_display(test);
+			menu_display(root);
 			break;
 		case 4:
-			menu_search(test);
+			menu_search(root);
 			break;
 		case 5:
 			printf("Do you really want to quit ? : 1(Yes) - Otherwise (No): ");
@@ -79,10 +86,10 @@ void menu(Node* test)
 				if(confirm==1) 
 					{exit(0);}
 				else 
-					{menu(test);}	
+					{menu(root);}	
 			break;
 		default:
-			menu(test);	
+			menu(root);	
 	}
 	
 	int exit;
@@ -94,5 +101,4 @@ void menu(Node* test)
 		goto LOOP;
 	}
 }
-
 
