@@ -68,7 +68,7 @@ Node* getParent(Node* node)
 
 Node* getGrandParent(Node* node)
 {
- 	return (node==NULL || node->parent==NULL)? NULL : node->parent->parent;
+ 	return (node==NULL || node->parent==NULL)? NULL : getParent(node->parent);
 }
 
 Node* getUncle(Node* node)
