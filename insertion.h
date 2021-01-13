@@ -7,6 +7,9 @@ void InsertCase2(Node* n) {
   return;
 }
 
+void InsertCase4(Node* n);
+void InsertCase3(Node* n);
+
 //Source : wiki 
 void InsertRepairTree(Node* n) {
 	
@@ -23,6 +26,7 @@ void InsertRepairTree(Node* n) {
     InsertCase4(n);
   }
 }
+
 
 void InsertCase3(Node* n) {
   getParent(n)->color = "black";
