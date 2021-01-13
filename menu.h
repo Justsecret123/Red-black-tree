@@ -1,6 +1,3 @@
-//#include<stdio.h>
-//#include<stdlib.h>
-//#include<conio.h>
 
 Node* menu_insertion(Node* root)
 {
@@ -14,13 +11,19 @@ Node* menu_insertion(Node* root)
 	
 }
 
-
-
-void menu_removal()
+void menu_removal(Node* root)
 {
 	int key;
 	printf("Enter the key of the node you want to remove: ");
 	scanf("%d", &key);
+	Node* node = search(root,key);
+	if(node==NULL){
+		printf("Node not found.");
+		menu_removal(root);
+	}
+	else{
+		menu_display(root);
+	}
 }
 
 void menu_display(Node* root)
@@ -72,7 +75,7 @@ void menu(Node* root)
 			menu(root);
 			break;
 		case 2: 
-			menu_removal();
+			menu_removal(root);
 			break;
 		case 3:
 			menu_display(root);
@@ -101,4 +104,5 @@ void menu(Node* root)
 		goto LOOP;
 	}
 }
+
 

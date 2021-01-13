@@ -1,96 +1,31 @@
+/*Standard libraries*/
 #include<stdio.h>
 #include<stdlib.h>
+
+/*Libraries*/
 #include<malloc.h>
 #include<windows.h>
-
-/*
-|--------------|
- Define colors
-|-------------| 
-*/
-
-#define RED   "\x1B[31m"
-#define GRN   "\x#endif1B[32m"
-#define YEL   "\x1B[33m"
-#define BLU   "\x1B[34m"
-#define MAG   "\x1B[35m"
-#define CYN   "\x1B[36m"
-#define WHT   "\x1B[37m"
-#define RESET "\x1b[30m"
-
-
-/*
-|----------------------------|
-  Node structure declaration
-|---------------------------|
-*/
-
-typedef struct Node
-{
-	struct Node* parent; 
-	struct Node* left; 
-	struct Node* right; 
-	char* color;
-	int key;
-}
-Node;
-
-/*
-|---------------------------------------------|
-  Point structure declaration (see display.h) 
-|--------------------------------------------|
-*/
-typedef struct Point
-{
-	int LastX;
-	int step;
-}
-Point;
-
-
-/*
-|------------|
- Header files
-|-----------|
-*/
-
-#include "search.h"
-#include "display.h"
 #include<assert.h>
 
+/*Header files*/
 
-
-
-Node* getParent(Node* node)
-{
-	return (node==NULL)? NULL : node->parent;
-}
-
-Node* getGrandParent(Node* node)
-{
- 	return (node==NULL || node->parent==NULL)? NULL : getParent(node->parent);
-}
-
-Node* getUncle(Node* node)
-{
-	Node* result = getGrandParent(node);
-	if(result==NULL)
-		{return NULL;}
-	else
-		{return (node->parent==result->left)? result->right : result->left;}
-return NULL;
-}
-
-Node* getSibling(Node* node)
-{
-	if(node==NULL || node->parent==NULL)
-		{return(NULL);}
-	else
-		{return	(node==node->parent->left)? node->parent->right : node->parent->left;}
-}
-
+/****Struct and macros*****/
+#include "colors_definition.h"
+#include "point.h"
 #include "node.h"
+
+/*Functions*/
+#include "search.h"
+#include "display.h"
+#include "get.h"
+#include "rotations.h"
+#include "insertion.h"
+#include "removal.h"
+
+/*Menu*/
 #include "menu.h"
+
+
 
 int main()
 {
@@ -114,8 +49,6 @@ int main()
 	//Loop
 	menu(test);
 	
-
-
-	
 	return 0;
 }
+
